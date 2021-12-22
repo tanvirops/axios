@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "grunt test && bundlesize",
-    "start": "node ./sandbox/server.js",
-    "build": "NODE_ENV=production grunt build",
+    "start": "node init && node ./sandbox/server.js",
+    "build": "node init && NODE_ENV=production grunt build",
     "preversion": "npm test",
     "version": "npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json",
     "postversion": "git push && git push --tags",
